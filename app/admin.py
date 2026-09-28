@@ -47,6 +47,9 @@ async def notify_application(s, user, app):
 
 @router.callback_query(F.data.startswith('adm:'))
 async def admin_callback(q: CallbackQuery, s, user):
+    # Acknowledge immediately: statistics and lead lookups may take longer than
+    # Telegram's callback animation, especially after a database wake-up.
+    await q.answer()
     if user.id != settings().admin_id:
         return
     parts = q.data.split(':')

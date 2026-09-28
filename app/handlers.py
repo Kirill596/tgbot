@@ -145,6 +145,9 @@ async def start(message: Message, s, user):
 
 @router.callback_query(~F.data.startswith('adm:'))
 async def callback(q: CallbackQuery, s, user):
+    # Clear Telegram's button spinner before any database query or screen render.
+    # The next screen is delivered from the durable outbox after the transaction commits.
+    await q.answer()
     data = q.data or ''
     if data == 'admin':
         if user.id == settings().admin_id:
