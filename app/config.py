@@ -1,4 +1,5 @@
 from functools import lru_cache
+import re
 from pydantic import SecretStr, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -69,6 +70,10 @@ class Settings(BaseSettings):
         if self.scheduler_mode not in {'internal', 'external'}:
             raise ValueError('SCHEDULER_MODE must be internal or external')
         return self
+
+    def telegram_webhook_secret(self) -> str:
+        """Adapt a hosting-generated secret to Telegram's allowed alphabet."""
+        return re.sub(r'[^A-Za-z0-9_-]', '_', self.webhook_secret.get_secret_value())[:256]
 
 
 @lru_cache

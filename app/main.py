@@ -69,7 +69,7 @@ async def run():
         return web.json_response({'status': 'ok'})
 
     async def webhook(request):
-        if not hmac.compare_digest(request.headers.get('X-Telegram-Bot-Api-Secret-Token', ''), cfg.webhook_secret.get_secret_value()):
+        if not hmac.compare_digest(request.headers.get('X-Telegram-Bot-Api-Secret-Token', ''), cfg.telegram_webhook_secret()):
             raise web.HTTPUnauthorized()
         try:
             update = Update.model_validate(await request.json(), context={'bot': bot})
@@ -140,7 +140,7 @@ async def run():
     log.info('started', mode=cfg.mode)
     try:
         if cfg.mode == 'webhook':
-            await bot.set_webhook(cfg.public_url.rstrip('/') + '/telegram', secret_token=cfg.webhook_secret.get_secret_value(), allowed_updates=['message', 'callback_query'], drop_pending_updates=False)
+            await bot.set_webhook(cfg.public_url.rstrip('/') + '/telegram', secret_token=cfg.telegram_webhook_secret(), allowed_updates=['message', 'callback_query'], drop_pending_updates=False)
             await stop.wait()
         else:
             await bot.delete_webhook(drop_pending_updates=False)
