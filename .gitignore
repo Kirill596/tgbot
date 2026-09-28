@@ -1,0 +1,10 @@
+.env
+*.json.key
+credentials.json
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.db
+*.log
+.bot-process-id

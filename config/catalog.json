@@ -1,0 +1,28 @@
+{
+  "cities": [
+    {"city_id":"moscow","city_name":"Москва","active":true,"sort_order":1,"timezone":"Europe/Moscow"},
+    {"city_id":"spb","city_name":"Санкт-Петербург","active":true,"sort_order":2,"timezone":"Europe/Moscow"},
+    {"city_id":"kazan","city_name":"Казань","active":true,"sort_order":3,"timezone":"Europe/Moscow"},
+    {"city_id":"cheboksary","city_name":"Чебоксары","active":true,"sort_order":4,"timezone":"Europe/Moscow"},
+    {"city_id":"nnovgorod","city_name":"Нижний Новгород","active":true,"sort_order":5,"timezone":"Europe/Moscow"},
+    {"city_id":"samara","city_name":"Самара","active":true,"sort_order":6,"timezone":"Europe/Samara"},
+    {"city_id":"ufa","city_name":"Уфа","active":true,"sort_order":7,"timezone":"Asia/Yekaterinburg"},
+    {"city_id":"ekaterinburg","city_name":"Екатеринбург","active":true,"sort_order":8,"timezone":"Asia/Yekaterinburg"},
+    {"city_id":"novosibirsk","city_name":"Новосибирск","active":true,"sort_order":9,"timezone":"Asia/Novosibirsk"}
+  ],
+  "offers": [{
+    "offer_id":"samokat_courier",
+    "active":true,
+    "partner":"Самокат",
+    "vacancy_name":"🚴 Курьер в Самокате",
+    "short_description":"Подработка с возможностью подобрать подходящий город, район и формат занятости.",
+    "full_description":"Работа связана с доставкой заказов. Доступность вакансии и детали сотрудничества подтверждаются при оформлении у партнёра.",
+    "cities":["moscow","spb","kazan","cheboksary","nnovgorod","samara","ufa","ekaterinburg","novosibirsk"],
+    "requirements":"Требования к возрасту, документам и формату сотрудничества уточняются у партнёра перед оформлением.",
+    "conditions":"Условия и выплаты зависят от города и предложения партнёра. Подтверждённые суммы пока не добавлены — уточните их перед оформлением.",
+    "schedule":"Подходящий график и возможность совмещения уточняются при оформлении. Можно указать удобное время начала в анкете.",
+    "faq":"Нужен ли опыт? Укажите в анкете, есть ли опыт; требования уточняются у партнёра.\nКак проходит оформление? Сначала короткая анкета, затем переход к партнёру.\nМожно ли совмещать? Уточните доступный формат перед оформлением.",
+    "partner_url":"",
+    "sort_order":1
+  }]
+}

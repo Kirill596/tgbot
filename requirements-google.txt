@@ -1,0 +1,5 @@
+# Optional manual export only. Not needed by the bot.
+google-api-python-client==2.200.0
+google-auth==2.58.1
+httplib2==0.32.0
+google-auth-httplib2==0.4.2

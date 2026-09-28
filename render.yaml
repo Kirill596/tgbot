@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: smena-ryadom
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: MODE
+        value: webhook
+      - key: SCHEDULER_MODE
+        value: external
+      - key: ADMIN_ID
+        value: 1132113524
+      - key: BOT_TOKEN
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: PUBLIC_URL
+        sync: false
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: CRON_SECRET
+        generateValue: true
+      - key: LINK_SECRET
+        generateValue: true
